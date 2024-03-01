@@ -1,23 +1,16 @@
-import './App.css';
+import './App.scss';
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import HomePage from 'components/pages/HomePage/HomePage';
+import TopMenu from 'components/layout/TopMenu/TopMenu';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <TopMenu />
+      <Routes>   
+        <Route path='/' element={<HomePage />} />
+      </Routes> 
+    </BrowserRouter>    
   );
 }
-
-export default App;
