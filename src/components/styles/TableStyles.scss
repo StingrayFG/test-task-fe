@@ -1,3 +1,9 @@
+p {
+    margin: 0;
+    line-height: 2rem;
+}
+
+
 .weeks-table {
     margin-top: 10px;
     
@@ -10,6 +16,8 @@
 }
 
 .week-dates-cell {
+    flex-shrink: 0;
+
     width: 8rem;
 
     padding-left: 0.25rem;
@@ -38,12 +46,24 @@
 
 .week-day-cell {
     border: solid rgb(104, 128, 128) 2px;
+    
 }
 
-p {
-    margin: 0;
-    line-height: 2rem;
+.week-day-row {
+    height: 2rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
 }
+
+.week-day-row:hover {
+    background-color: rgb(0, 0, 0);
+}
+
+.week-day-row-hovered {
+    min-width: max-content;
+    position: relative;
+}
+
 
 .row-color-0 {
     background-color: rgba(104, 128, 128, 0.8);
