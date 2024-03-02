@@ -1,4 +1,4 @@
-
+import './ProjectTable.scss';
 import 'components/styles/TableStyles.scss';
 
 import React, { useEffect, useState } from 'react';
@@ -121,11 +121,42 @@ export default function ProjectTable({ project }) {
     <>
       {project && 
         <div>
-          <p>Distribution: {project.request.distribution}</p>
-          <p>Dates: {'from ' + new Date(project.request.filters.from).toString().slice(4, 15) + 
-          ' to ' + new Date(project.request.filters.to).toString().slice(4, 15)}</p>
-          <p>Groups: </p>
-          {project.request.filters.groups.values.map((group) => <p key={group}>{group + ' '}</p>)}
+          <p className='filter-header'>Filter settings</p>
+
+          <div className='line-thin'></div>
+
+          <form>
+            <div className='filter-distribution-day'>
+
+              <p className='filter-text'>Distribution:</p>
+              <select name='distribution' value={project.request.distribution}>
+                <option value="day">day</option>
+              </select>
+            </div>
+
+            <div className='filter-dates-div'>
+              <p className='filter-text'>Dates: from</p>
+              <input className='' name='datefrom' type='date' defaultValue={new Date(project.request.filters.from).toISOString().split('T')[0]}/>
+              <p className='filter-text'>to</p>
+              <input className='' name='dateto' type='date'  defaultValue={new Date(project.request.filters.to).toISOString().split('T')[0]}/>
+            </div>
+
+            <div className='filter-groups-div'>
+              <p className='filter-text'>Groups: </p>
+              {project.request.filters.groups.values.map((group) => 
+              <>
+                <p key={group} className='filter-text filter-group'>{group + ' '}</p>
+                <input type='checkbox' name='group1'/>
+              </>
+              )}
+            </div>
+
+            <div className='filter-button'><p className='filter-button-text'>Set filter (Non-functional placeholder)</p></div>
+
+            <div className='line-thin'></div>
+          </form>
+
+          
 
           {weeks && 
             <div className='weeks-table'>

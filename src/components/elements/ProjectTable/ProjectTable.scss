@@ -1,0 +1,79 @@
+input {
+    margin: 0.5rem;
+
+    background-color: rgb(83, 105, 105);
+    border: none;
+    border-radius: 10px;
+
+    font-size: 14px;
+    color: rgb(229, 229, 229);
+}
+
+select {
+    min-width: 5rem;
+
+    margin: 0.5rem;
+
+    background-color: rgb(83, 105, 105);
+    border: none;
+    border-radius: 10px;
+
+    font-size: 14px;
+    color: rgb(229, 229, 229);
+}
+
+.filter-header {
+    font-size: 18px;
+}
+
+.filter-text {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.filter-distribution-day {
+    display: flex;
+}
+
+.filter-dates-div {
+    display: flex;
+}
+
+.filter-groups-div {
+    display: flex;
+}
+
+.filter-group {
+    margin-left: 1rem;
+}
+
+.filter-button {
+    height: 32px;
+    width: fit-content;
+
+    border-radius: 10px;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 6px;
+    margin-bottom: 18px;
+
+    background-color: rgb(104, 128, 128);
+}
+
+.filter-button:hover {
+    background-color: rgb(83, 105, 105);
+}
+
+
+.filter-button-text {
+    line-height: 32px;
+    font-size: 14px;
+}
+
+.line-thin {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-top: solid rgb(104, 128, 128) 2px;
+}
