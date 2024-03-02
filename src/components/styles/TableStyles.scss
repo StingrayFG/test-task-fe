@@ -1,0 +1,62 @@
+.weeks-table {
+    margin-top: 10px;
+    
+    display: grid;
+    border: solid rgb(104, 128, 128) 1px;
+}
+
+.week-row {
+    display: flex;
+}
+
+.week-dates-cell {
+    width: 8rem;
+
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+
+    border: solid rgb(104, 128, 128) 1px;
+}
+
+.week-fields-cell {
+    border: solid rgb(104, 128, 128) 1px;
+}
+
+.week-field-row {
+    height: 2rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+
+.week-days-cell {
+    flex-grow: 1;
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.week-day-cell {
+    border: solid rgb(104, 128, 128) 2px;
+}
+
+p {
+    margin: 0;
+    line-height: 2rem;
+}
+
+.row-color-0 {
+    background-color: rgba(104, 128, 128, 0.8);
+}
+
+.row-color-1 {
+    background-color: rgba(106, 104, 128, 0.8);
+}
+
+.row-color-2 {
+    background-color: rgba(104, 128, 128, 0.4);
+}
+
+.row-color-3 {
+    background-color: rgba(106, 104, 128, 0.4);
+}
