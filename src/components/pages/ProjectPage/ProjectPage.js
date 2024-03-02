@@ -130,7 +130,6 @@ export default function ProjectPage() {
 
       // push the assembled week object into resulting array
       if (week.days.length === 7) {
-        console.log(week)
         res.push(week);
         week = {days: [], columns: week.columns};;
       } 

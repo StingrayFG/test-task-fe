@@ -15,7 +15,7 @@ export default function HomePage() {
         await axios.get(process.env.REACT_APP_BACKEND_URL + '/projects/all')
         .then((res) => {
           setCardNames(res.data);
-          console.log(res);
+          //console.log(res);
         })
         .catch((err) => {
           console.log(err);

@@ -108,7 +108,6 @@ export default function ProjectTable({ project }) {
 
       // push the assembled week object into resulting array
       if (week.days.length === 7) {
-        console.log(week)
         res.push(week);
         week = {days: [], columns: week.columns};;
       } 
@@ -129,8 +128,8 @@ export default function ProjectTable({ project }) {
             <div className='filter-distribution-day'>
 
               <p className='filter-text'>Distribution:</p>
-              <select name='distribution' value={project.request.distribution}>
-                <option value="day">day</option>
+              <select name='distribution' defaultValue={project.request.distribution}>
+                <option value='day'>day</option>
               </select>
             </div>
 
@@ -144,10 +143,10 @@ export default function ProjectTable({ project }) {
             <div className='filter-groups-div'>
               <p className='filter-text'>Groups: </p>
               {project.request.filters.groups.values.map((group) => 
-              <>
-                <p key={group} className='filter-text filter-group'>{group + ' '}</p>
-                <input type='checkbox' name='group1'/>
-              </>
+                <div key={group} className='filter-group-div'>
+                  <p className='filter-text filter-group'>{group + ' '}</p>
+                  <input type='checkbox' name='group1' defaultChecked={true}/>
+                </div>
               )}
             </div>
 

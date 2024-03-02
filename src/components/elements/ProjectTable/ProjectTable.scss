@@ -44,6 +44,10 @@ select {
     display: flex;
 }
 
+.filter-group-div {
+    display: flex;
+}
+
 .filter-group {
     margin-left: 1rem;
 }
@@ -70,6 +74,8 @@ select {
 .filter-button-text {
     line-height: 32px;
     font-size: 14px;
+
+    user-select: none;
 }
 
 .line-thin {

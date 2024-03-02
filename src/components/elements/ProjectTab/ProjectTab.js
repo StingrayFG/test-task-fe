@@ -3,7 +3,7 @@ import './ProjectTab.scss';
 import React from 'react';
 
 
-export default function ProjectCard({ children, name }) {
+export default function ProjectTab({ children }) {
   return (
     <div className='tab'>
         {children ? children : 
