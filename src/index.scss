@@ -1,16 +1,18 @@
 * {
-    font-family: Arial;
+    font-family: monospace;
 
     -webkit-box-sizing: border-box; 
     -moz-box-sizing: border-box;    
     box-sizing: border-box;         
 }
 
-html {
-    height: 100%;
+p {
+    color: rgb(229 229 229);
 }
 
 body {
+    min-height: 100vh;
+
     margin: 0;
     padding: 20px;
 
