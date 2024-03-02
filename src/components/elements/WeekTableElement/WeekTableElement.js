@@ -11,7 +11,7 @@ export default function WeekTableElement({ week }) {
       
       {week.columns && 
         <div className='week-fields-cell'>
-          <div className='week-field-row'><p>Field</p></div>
+          <div className='week-field-row'><p></p></div>
           {week.columns.map((column, index) => (
             <div className={'week-field-row' + ' row-color-' + index % 4}><p>{column}</p></div>
           ))}

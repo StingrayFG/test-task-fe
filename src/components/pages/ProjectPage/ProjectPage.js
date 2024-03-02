@@ -184,7 +184,7 @@ export default function HomePage() {
     else if (firstDayName === 'Fri') { firstDayOffset = 4; }
     else if (firstDayName === 'Sat') { firstDayOffset = 5; }
     else if (firstDayName === 'Sun') { firstDayOffset = 6; }
-    let firstTableDate = records[0].date;
+    let firstTableDate = new Date(records[0].date);
     firstTableDate.setDate(firstTableDate.getDate() - firstDayOffset);
 
     let week = {days: []};
@@ -212,7 +212,7 @@ export default function HomePage() {
         }
       // push day placeholder if no data is given for this day
       } else {
-        week.days.push({})
+        week.days.push({...records[0], date: ''})
       }
 
       // push the assembled week object into resulting array
