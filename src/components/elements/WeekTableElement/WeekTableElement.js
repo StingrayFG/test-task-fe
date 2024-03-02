@@ -1,6 +1,9 @@
 import 'components/styles/TableStyles.scss';
+
 import React, { useEffect, useState } from 'react';
+
 import DayTableElement from 'components/elements/DayTableElement/DayTableElement';
+
 
 export default function WeekTableElement({ week }) {
   return (
@@ -13,7 +16,7 @@ export default function WeekTableElement({ week }) {
         <div className='week-fields-cell'>
           <div className='week-field-row'><p></p></div>
           {week.columns.map((column, index) => (
-            <div className={'week-field-row' + ' row-color-' + index % 4}><p>{column}</p></div>
+            <div key={column} className={'week-field-row' + ' row-color-' + index % 4}><p>{column}</p></div>
           ))}
         </div>
       }

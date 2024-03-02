@@ -1,5 +1,7 @@
 import 'components/styles/TableStyles.scss';
+
 import React, { useEffect, useState } from 'react';
+
 
 export default function DayTableElement({ day }) {
   const [hoveredName, setHoveredName] = useState();
@@ -18,14 +20,14 @@ export default function DayTableElement({ day }) {
         {day.date && (day.date.toString().slice(4, 10))}
       </p></div>
 
-      {Object.entries(day.data).map(([key, value], index) => (
-        <div className={'week-day-row' + ' row-color-' + index % 4 + (hoveredName === key ? ' week-day-row-hovered' : '')} 
-        onMouseEnter={() => setHoveredName(key)} onMouseLeave={()=> setHoveredName('')}><p>
+      {Object.entries(day.data).map(([name, value], index) => (
+        <div key={name} className={'week-day-row' + ' row-color-' + index % 4 + (hoveredName === name ? ' week-day-row-hovered' : '')} 
+        onMouseEnter={() => setHoveredName(name)} onMouseLeave={()=> setHoveredName('')}><p>
           {day.showNames && (
-            (hoveredName === key) ?
-            key + ': '
+            (hoveredName === name) ?
+            name + ': '
             :
-            truncateName(key) + ': '
+            truncateName(name) + ': '
           )}
           {day.date && (value)}
         </p></div>
