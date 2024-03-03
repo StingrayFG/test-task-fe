@@ -9,7 +9,7 @@ import ProjectCard from 'components/elements/ProjectCard/ProjectCard';
 export default function HomePage() {
   const [cardNames, setCardNames] = useState();
 
-  useEffect(() => {
+  useEffect(() => { // fetch projects list
     if (!cardNames) {
       const getCards = async () => {
         await axios.get(process.env.REACT_APP_BACKEND_URL + '/projects/all')

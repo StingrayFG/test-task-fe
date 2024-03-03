@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 export default function DayTableElement({ day }) {
   const [hoveredName, setHoveredName] = useState();
 
-  const truncateName = (name) => {
+  const truncateName = (name) => { // truncate key's name to fit into the table
     if (name.length > 11) {
       return name.slice(0,9) + '..';
     } else {

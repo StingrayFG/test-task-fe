@@ -29,7 +29,7 @@ export default function ProjectTable({ project }) {
     }
   })
 
-  const parseRecordsToArray = () => { 
+  const parseRecordsToArray = () => { // parse records into array
     let res = [];
     if (project.name.includes('tags')) {
       Object.entries(project.records).forEach(([key, value]) => {
@@ -43,7 +43,7 @@ export default function ProjectTable({ project }) {
     setRecords(res);
   }
 
-  const getPlaceholderDay = () => {
+  const getPlaceholderDay = () => { // generate a record (day) containing all the possible keys for the given project
     let placeholder = { data: {} };
 
     for (let i = 0; i < records.length; i++) {
@@ -56,17 +56,18 @@ export default function ProjectTable({ project }) {
     setPlaceholderDay(placeholder);
   }
 
-  const addMissingKeys = () => {
+  const addMissingKeys = () => { // add missing keys to records
     for (let i = 0; i < records.length; i++) {
       records[i].data = Object.assign({}, {...placeholderDay}.data, records[i].data)
     }
     setAreKeysAdded(true);
   }
 
-  const parseRecordsToWeeks = () => { 
+  const parseRecordsToWeeks = () => { // generate weeks from records
     let res = [];
 
-    let firstDayOffset = 0;
+    // get the first week's first day's date (first date in the table)
+    let firstDayOffset = 0; 
     let firstDayName = records[0].date.toString().slice(0, 3);
     if (firstDayName === 'Tue') { firstDayOffset = 1; }
     else if (firstDayName === 'Wed') { firstDayOffset = 2; }
